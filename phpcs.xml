@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset name="Robot">
+    <description>PHP CodeSniffer</description>
+    <arg name="extensions" value="php" />
+    <file>./</file>
+
+    <!-- Base ruleset. -->
+    <rule ref="PSR12" />
+
+    <!-- Couple of DX things I like -->
+    <rule ref="SlevomatCodingStandard.Namespaces.ReferenceUsedNamesOnly" />
+    <rule ref="SlevomatCodingStandard.TypeHints.DeclareStrictTypes">
+        <properties>
+            <property name="spacesCountAroundEqualsSign" value="0" />
+        </properties>
+    </rule>
+
+    <!-- Exclusions -->
+    <exclude-pattern>*/vendor/*</exclude-pattern>
+    <exclude-pattern>*/storage/*</exclude-pattern>
+</ruleset>

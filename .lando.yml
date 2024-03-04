@@ -1,0 +1,19 @@
+name: php-robot-warehouse
+
+# Smallest lando footprint?
+services:
+  php:
+    type: php:8.2
+    via: cli
+    webroot: public
+    composer_version: 2
+    build:
+      - composer install
+
+tooling:
+  run:
+    service: php
+    cmd: php app/index.php
+  test:
+    service: php
+    cmd: phpunit && phpcs .
