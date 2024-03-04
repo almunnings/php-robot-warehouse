@@ -13,10 +13,7 @@ trait Positionable
 
     public function position(?Position $position = null): Position
     {
-        if ($position) {
-            $this->position = $position;
-        }
-
+        $this->position = $position ?: $this->position;
         return $this->position;
     }
 }

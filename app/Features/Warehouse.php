@@ -12,26 +12,17 @@ use App\Features\Position;
 class Warehouse
 {
     /**
-     * The items in the warehouse.
+     * Create a new warehouse.
      *
-     * @var \App\Contracts\HasId&\App\Contracts\HasPosition[]
+     * @param int $width Warehouse width
+     * @param int $height Warehouse height
+     * @param HasId&HasPosition&HasWarehouse[] $items Items in the warehouse
      */
-    protected array $items = [];
-
     public function __construct(
-        private int $width,
-        private int $height
+        public readonly int $width,
+        public readonly int $height,
+        protected array $items = []
     ) {
-    }
-
-    public function width(): int
-    {
-        return $this->width;
-    }
-
-    public function height(): int
-    {
-        return $this->height;
     }
 
     public function items(): array
@@ -67,7 +58,7 @@ class Warehouse
     {
         return array_filter(
             $this->items,
-            fn($item) => $item instanceof HasPosition && $item->position()->equals($position)
+            fn($item) => $item->position()->equals($position)
         );
     }
 }

@@ -14,12 +14,13 @@ $warehouse = new Warehouse(10, 10);
 $controller = new Controller();
 $robot = new Robot();
 
-// Create a controller for the robot.
+// Connect the robot to the controller.
 $robot->controller($controller);
 
-// Position the robot bottom left initially.
+// Add and position the robot bottom left.
 $warehouse->add($robot, new Position(0, 9));
 
+// CLI input.
 echo "Domo arigato!" . PHP_EOL;
 echo "Commands: N, S, E, W, exit" . PHP_EOL;
 

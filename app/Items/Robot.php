@@ -43,12 +43,12 @@ class Robot implements HasId, HasController, HasPosition, HasWarehouse
         $position->move($command, $warehouse);
 
         // Find any other robots in this position.
-        $robots = array_filter(
+        $collisions = array_filter(
             $warehouse->find($position),
             fn($item) => $item instanceof Robot
         );
 
-        if (!empty($robots)) {
+        if (!empty($collisions)) {
             logger()->info("Collision detected");
             return;
         }

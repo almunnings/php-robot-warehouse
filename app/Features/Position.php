@@ -42,12 +42,12 @@ class Position
                 }
                 break;
             case Command::MOVE_SOUTH:
-                if ($this->y < $warehouse->height() - 1) {
+                if ($this->y < $warehouse->height - 1) {
                     $this->y += 1;
                 }
                 break;
             case Command::MOVE_EAST:
-                if ($this->x < $warehouse->width() - 1) {
+                if ($this->x < $warehouse->width - 1) {
                     $this->x += 1;
                 }
                 break;

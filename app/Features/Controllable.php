@@ -17,6 +17,7 @@ trait Controllable
             $controller->connection($this);
             $this->controller = $controller;
         }
+
         return $this->controller;
     }
 }

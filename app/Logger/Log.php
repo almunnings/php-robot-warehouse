@@ -15,18 +15,11 @@ class Log extends Logger
 {
     /**
      * The singleton logger instances.
-     *
-     * @var array
      */
-    private static $instances;
+    private static array $instances;
 
     /**
      * A logger that can be used to log messages.
-     *
-     * @param string $name
-     *  The name of the logger.
-     *
-     * @return void
      */
     public function __construct(string $name)
     {
@@ -49,11 +42,6 @@ class Log extends Logger
 
     /**
      * Get the logger instance.
-     *
-     * @param string $name
-     *  The name of the logger.
-     *
-     * @return Log
      */
     public static function get(string $name): Log
     {
