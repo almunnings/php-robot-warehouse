@@ -10,7 +10,7 @@
 
 declare(strict_types=1);
 
-use App\Features\Logger\Log;
+use App\Logger\Log;
 
 /**
  * Get the logger instance.
@@ -18,7 +18,7 @@ use App\Features\Logger\Log;
  * @param string|null $channel
  *   The channel name of the logger. Defaults to app.
  *
- * @return \App\Features\Logger\Log
+ * @return \App\Logger\Log
  */
 function logger(?string $channel = null): Log
 {

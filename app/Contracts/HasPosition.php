@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Contracts;
 
-use App\Features\Position\Position;
+use App\Features\Position;
 
 interface HasPosition
 {

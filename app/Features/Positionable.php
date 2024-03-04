@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Features\Position;
+namespace App\Features;
 
 /**
  * A positional item has a position in the warehouse.

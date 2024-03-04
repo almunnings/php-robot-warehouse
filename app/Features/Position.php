@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App\Features\Position;
+namespace App\Features;
 
 use App\Enumerations\Command;
-use App\Features\Warehouse\Warehouse;
+use App\Features\Warehouse;
 
 /**
  * A position in a two-dimensional space.

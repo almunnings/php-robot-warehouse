@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Contracts;
 
 use App\Enumerations\Command;
-use App\Features\Controller\Controller;
+use App\Features\Controller;
 
 interface HasController
 {

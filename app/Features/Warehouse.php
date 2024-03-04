@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace App\Features\Warehouse;
+namespace App\Features;
 
 use App\Contracts\HasId;
 use App\Contracts\HasPosition;
 use App\Contracts\HasWarehouse;
-use App\Features\Position\Position;
+use App\Features\Position;
 
 class Warehouse
 {
@@ -39,6 +39,9 @@ class Warehouse
         return $this->items;
     }
 
+    /**
+     * Add an item to the warehouse.
+     */
     public function add(HasId&HasPosition&HasWarehouse $item, Position $position): void
     {
         $item->warehouse($this);
@@ -46,6 +49,9 @@ class Warehouse
         $this->items[] = $item;
     }
 
+    /**
+     * Remove an item from the warehouse.
+     */
     public function remove(HasId&HasPosition&HasWarehouse $item): void
     {
         $this->items = array_filter(
@@ -54,6 +60,9 @@ class Warehouse
         );
     }
 
+    /**
+     * Find items at a position.
+     */
     public function find(Position $position): array
     {
         return array_filter(

@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace App\Tests\Features;
 
-use App\Features\Controller\Controller;
-use App\Features\Position\Position;
+use App\Features\Controller;
+use App\Features\Position;
+use App\Features\Warehouse;
 use App\Tests\TestBase;
-use App\Features\Warehouse\Warehouse;
 use App\Items\Robot;
 
 class RobotTest extends TestBase

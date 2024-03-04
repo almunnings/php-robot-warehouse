@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Features\Logger;
+namespace App\Logger;
 
 use Monolog\Level;
 use Monolog\Logger;

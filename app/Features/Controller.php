@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Features\Controller;
+namespace App\Features;
 
 use App\Contracts\HasController;
 use App\Enumerations\Command;

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Features\Controller;
+namespace App\Features;
 
 /**
  * A controllable item requires a connection to a controller.

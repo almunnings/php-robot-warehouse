@@ -9,9 +9,9 @@ use App\Contracts\HasId;
 use App\Contracts\HasPosition;
 use App\Contracts\HasWarehouse;
 use App\Enumerations\Command;
-use App\Features\Controller\Controllable;
-use App\Features\Position\Positionable;
-use App\Features\Warehouse\Warehouseable;
+use App\Features\Controllable;
+use App\Features\Positionable;
+use App\Features\Warehouseable;
 
 class Robot implements HasId, HasController, HasPosition, HasWarehouse
 {
