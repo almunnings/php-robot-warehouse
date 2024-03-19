@@ -35,6 +35,8 @@ class Position
 
     public function move(Command $command, Warehouse $warehouse): void
     {
+        $original = clone $this;
+
         switch ($command) {
             case Command::MOVE_NORTH:
                 if ($this->y > 0) {
@@ -56,6 +58,10 @@ class Position
                     $this->x -= 1;
                 }
                 break;
+        }
+
+        if ($original->equals($this)) {
+            logger()->warning('Robot could not move');
         }
     }
 }

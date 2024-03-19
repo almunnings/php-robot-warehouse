@@ -13,4 +13,6 @@ enum Command: string
     case MOVE_SOUTH = 'S';
     case MOVE_EAST = 'E';
     case MOVE_WEST = 'W';
+    case GRAB = 'G';
+    case DROP = 'D';
 }

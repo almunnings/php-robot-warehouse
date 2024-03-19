@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Items;
 
+use App\Contracts\HasClaw;
 use App\Contracts\HasController;
 use App\Contracts\HasId;
 use App\Contracts\HasPosition;
@@ -12,12 +13,14 @@ use App\Enumerations\Command;
 use App\Features\Controllable;
 use App\Features\Positionable;
 use App\Features\Warehouseable;
+use App\Features\Grabbable;
 
-class Robot implements HasId, HasController, HasPosition, HasWarehouse
+class Robot implements HasId, HasController, HasPosition, HasWarehouse, HasClaw
 {
     use Controllable;
     use Positionable;
     use Warehouseable;
+    use Grabbable;
 
     private string $id;
 
@@ -33,6 +36,8 @@ class Robot implements HasId, HasController, HasPosition, HasWarehouse
             Command::MOVE_SOUTH => $this->move($command),
             Command::MOVE_EAST => $this->move($command),
             Command::MOVE_WEST => $this->move($command),
+            Command::GRAB => $this->grab($this->position(), $this->warehouse()),
+            Command::DROP => $this->drop($this->position(), $this->warehouse()),
         };
     }
 

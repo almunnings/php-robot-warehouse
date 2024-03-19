@@ -5,6 +5,7 @@ declare(strict_types=1);
 use App\Features\Controller;
 use App\Features\Position;
 use App\Features\Warehouse;
+use App\Items\Package;
 use App\Items\Robot;
 
 require_once __DIR__ . '/../vendor/autoload.php';
@@ -19,6 +20,10 @@ $robot->controller($controller);
 
 // Add and position the robot bottom left.
 $warehouse->add($robot, new Position(0, 9));
+
+// Add some packages to the warehouse.
+$warehouse->add(new Package(), new Position(9, 0));
+$warehouse->add(new Package(), new Position(5, 5));
 
 // CLI input.
 echo "Domo arigato!" . PHP_EOL;

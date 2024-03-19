@@ -43,11 +43,11 @@ class Warehouse
     /**
      * Remove an item from the warehouse.
      */
-    public function remove(HasId&HasPosition&HasWarehouse $item): void
+    public function remove(HasId&HasPosition&HasWarehouse $find): void
     {
         $this->items = array_filter(
             $this->items,
-            fn (HasId $item) => $item->id() !== $item->id()
+            fn (HasId $item) => $find->id() !== $item->id()
         );
     }
 
