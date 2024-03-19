@@ -6,7 +6,7 @@ namespace App\Features;
 
 use App\Items\Package;
 
-trait Grabbable
+trait Clawable
 {
     protected $inHands = null;
 

@@ -13,14 +13,14 @@ use App\Enumerations\Command;
 use App\Features\Controllable;
 use App\Features\Positionable;
 use App\Features\Warehouseable;
-use App\Features\Grabbable;
+use App\Features\Clawable;
 
 class Robot implements HasId, HasController, HasPosition, HasWarehouse, HasClaw
 {
     use Controllable;
     use Positionable;
     use Warehouseable;
-    use Grabbable;
+    use Clawable;
 
     private string $id;
 
